@@ -69,11 +69,12 @@ const RoomInfo = ({ people, rooms, handleDistribution }) => {
                       return { className, onClick };
                     })()}
                   />
-                  <div className="counterValue">
+                  <div className={`counterValue ${isKeyUpAdult ? 'focus' : ''}`}>
                     <input
                       name="adultNumber"
+                      className={`${isKeyUpAdult ? 'focusFont' : ''}`}
                       type={isKeyUpAdult ? 'number' : 'text'}
-                      value={+adultValue}
+                      value={adultValue}
                       min={min}
                       max={max}
                       step={1}
@@ -84,7 +85,6 @@ const RoomInfo = ({ people, rooms, handleDistribution }) => {
                         handleClick({ action: 'input', type: 'adult', onInputStart: true });
                       }}
                       onChange={(e) => {
-                        console.log('e.target.value Adult ', e.target.value)
                         handleClick({ action: 'input', type: 'adult', onInputVal: e.target.value });
                       }}
                       onBlur={() => {
@@ -134,11 +134,12 @@ const RoomInfo = ({ people, rooms, handleDistribution }) => {
                       return { className, onClick };
                     })()}
                   />
-                  <div className="counterValue">
+                  <div className={`counterValue ${isKeyUpChild ? 'focus' : ''}`}>
                     <input
                       name="childNumber"
+                      className={`${isKeyUpChild ? 'focusFont' : ''}`}
                       type={isKeyUpChild ? 'number' : 'text'}
-                      value={+childValue}
+                      value={childValue}
                       min={min}
                       max={max}
                       step={1}
@@ -149,7 +150,6 @@ const RoomInfo = ({ people, rooms, handleDistribution }) => {
                         handleClick({ action: 'input', type: 'child', onInputStart: true });
                       }}
                       onChange={(e) => {
-                        console.log('e.target.value Child ', e.target.value)
                         handleClick({ action: 'input', type: 'child', onInputVal: e.target.value });
                       }}
                       onBlur={() => {
